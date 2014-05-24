@@ -4,7 +4,7 @@ Contributors: BrashRebel
 Tags: client, portal, dashboard, admin, help, tutorials, faq, documentation
 Requires at least: 3.8.0
 Tested up to: 3.9.1
-Stable tag: 0.1
+Stable tag: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,3 +24,14 @@ Using this plugin is very simple. All you have to do is:
 
 
 == Changelog ==
+
+= 0.2 =
+
+* Successfully connects to source and retrieves data
+* Creates FAQ tab on CD Help page
+* Outputs data from source on FAQ tab in list
+* Hides content for each item until heading is clicked on
+
+= 0.1 =
+
+* Initial version

@@ -2,7 +2,7 @@
 /*
 Plugin Name: Client Dash WP Help Add-on
 Description: Integrates content from WP Help with Client Dash
-Version: 0.1
+Version: 0.2
 Author: Kyle Maurer
 Author URI: http://realbigmarketing.com/staff/kyle
 */
@@ -21,15 +21,16 @@ $posts = json_decode( $result['body'] );
 	if ($posts) {
 		echo '<ul>';
 		foreach ($posts as $value) { ?>
-			<li><h3><?php echo $value->post_title; ?></h3>
-				<?php echo $value->post_content; ?>
+			<li><h3 class="cd-click" onclick="cd_updown('cd-<?php echo $value->post_name; ?>');">
+					<?php echo $value->post_title; ?>
+				</h3>
+				<div id="cd-<?php echo $value->post_name; ?>" style="display: none;">
+					<?php echo $value->post_content; ?>
+				</div>
 			</li>
 		<?php }
 		echo '</ul>';
 	}
-	echo '<pre>';
-	print_r($posts);
-	echo '</pre>';
 }
 add_action('cd_add_to_faq_tab', 'cdwph');
 ?>
