@@ -2,10 +2,18 @@
 /*
 Plugin Name: Client Dash WP Help Add-on
 Description: Integrates content from WP Help with Client Dash
-Version: 0.3
+Version: 0.3.1
 Author: Kyle Maurer
 Author URI: http://realbigmarketing.com/staff/kyle
 */
+
+// Notices for if CD is not active
+function cdwph_notices() {
+	echo '<div class="error">Client Dash WP Help Add-on requires <b>Client Dash</b>. Please install <b>Client Dash</b> to continue using.</div>';
+}
+if (!is_plugin_active( 'client-dash/client-dash.php' )) {
+add_action('admin_notices', 'cdwph_notices');
+}
 
 // Register settings
 function cdwph_register_settings() {

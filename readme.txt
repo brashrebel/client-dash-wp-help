@@ -4,7 +4,7 @@ Contributors: BrashRebel
 Tags: client, portal, dashboard, admin, help, tutorials, faq, documentation
 Requires at least: 3.8.0
 Tested up to: 3.9.1
-Stable tag: 0.3
+Stable tag: 0.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,10 @@ Using this plugin is very simple. All you have to do is:
 
 
 == Changelog ==
+
+= 0.3.1 =
+
+* Output admin notice if `client-dash` is not active
 
 = 0.3 =
 
