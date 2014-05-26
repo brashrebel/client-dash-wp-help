@@ -2,26 +2,47 @@
 /*
 Plugin Name: Client Dash WP Help Add-on
 Description: Integrates content from WP Help with Client Dash
-Version: 0.2
+Version: 0.3
 Author: Kyle Maurer
 Author URI: http://realbigmarketing.com/staff/kyle
 */
-// Add settings
-function cdwph_settings() {
-	echo 'test settings';
+
+// Register settings
+function cdwph_register_settings() {
+	register_setting('cd_options', 'cdwph_url', 'esc_url_raw');
 }
-add_action('settings_page_client-dash', 'cdwph_settings');
+add_action('admin_init', 'cdwph_register_settings');
+
+// Add settings
+function cdwph_settings_display() { ?>
+<table class="form-table">
+	<tbody>
+		<tr valign="top">
+			<th scope="row"><h3>WP Help settings</th>
+		</tr>
+		<tr valign="top">
+			<th scope="row"><label for="cdwph_url">Source URL</label></th>
+			<td><input type="text" id="cdwph_url" name="cdwph_url" value="<?php echo get_option('cdwph_url'); ?>" /></td>
+		</tr>
+	</tbody>
+</table>
+<?php }
+add_action('cd_settings_general_tab', 'cdwph_settings_display', 11);
 
 // Add the FAQ tab
 function cdwph_add_tab( $tabs ) {
-	$tabs['FAQ'] = 'faq';
+	$tabs['help']['FAQ'] = 'faq';
 	return $tabs;
 }
-add_filter('cd_add_tabs', 'cdwph_add_tab');
+add_filter('cd_tabs', 'cdwph_add_tab');
 
 // Output the tab content
 function cdwph() {
-$result = wp_remote_get( add_query_arg( 'time', time(), 'http://realbigsites.com/?wp-help-key=72f514d73c4ded27362f2f1983e1347d' ) );
+$source_url = get_option('cdwph_url');
+$result = wp_remote_get( add_query_arg( 'time', time(), $source_url ) );
+if (is_wp_error( $result ) OR empty($result)) {
+	echo '<h2>Please enter a valid source URL in <a href="'.cd_get_settings_url().'">Settings</a></h2>';
+} else {
 $posts = json_decode( $result['body'] );
 	if ($posts) {
 		echo '<ul>';
@@ -39,5 +60,6 @@ $posts = json_decode( $result['body'] );
 		echo '</ul>';
 	}
 }
-add_action('cd_add_to_faq_tab', 'cdwph');
+}
+add_action('cd_help_faq_tab', 'cdwph');
 ?>

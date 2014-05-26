@@ -4,7 +4,7 @@ Contributors: BrashRebel
 Tags: client, portal, dashboard, admin, help, tutorials, faq, documentation
 Requires at least: 3.8.0
 Tested up to: 3.9.1
-Stable tag: 0.2
+Stable tag: 0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,18 @@ Using this plugin is very simple. All you have to do is:
 
 
 == Changelog ==
+
+= 0.3 =
+
+* Register `cdwph_url` setting and render on Settings page
+* Validate `cdwph_url` using `esc_url_raw` callback
+* Get `cdwph_url` option in output on FAQ tab
+* Display message if WP error or empty value on FAQ tab
+* Link message to settings page using `cd_get_settings_url` function
+
+= 0.2.1 =
+
+* Output post content through `the_content` filter
 
 = 0.2 =
 
