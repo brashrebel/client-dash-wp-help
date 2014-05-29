@@ -9,11 +9,11 @@ Author URI: http://realbigmarketing.com/staff/kyle
 
 // Notices for if CD is not active
 function cdwph_notices() {
+	if (!is_plugin_active( 'client-dash/client-dash.php' )) {
 	echo '<div class="error">Client Dash WP Help Add-on requires <b>Client Dash</b>. Please install <b>Client Dash</b> to continue using.</div>';
+	}
 }
-if (!is_plugin_active( 'client-dash/client-dash.php' )) {
 add_action('admin_notices', 'cdwph_notices');
-}
 
 // Register settings
 function cdwph_register_settings() {
