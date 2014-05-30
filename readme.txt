@@ -12,12 +12,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 = What it does =
 
-Now the awesome power of the WP Help plugin can be harnessed and utilized within Client Dash! This plugin collects the help documents created by a source site using Mark Jaquith's super slick plugin.
+Now the awesome power of the [WP Help] (http://wordpress.org/plugins/wp-help) plugin can be harnessed and utilized within Client Dash! This plugin collects the help documents created by a source site using Mark Jaquith's super slick plugin.
 
 = Requirements =
 
-* Use of WP Help plugin on another site
-* Client Dash plugin version 1.2.1 or higher
+* Use of [WP Help] (http://wordpress.org/plugins/wp-help) plugin on another site
+* [Client Dash] (http://wordpress.org/plugins/client-dash) plugin version 1.2.1 or higher
 
 == Installation ==
 
