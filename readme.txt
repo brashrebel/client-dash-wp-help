@@ -14,6 +14,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Now the awesome power of the WP Help plugin can be harnessed and utilized within Client Dash! This plugin collects the help documents created by a source site using Mark Jaquith's super slick plugin.
 
+= Requirements =
+
+* Use of WP Help plugin on another site
+* Client Dash plugin version 1.2.1 or higher
+
 == Installation ==
 
 Using this plugin is very simple. All you have to do is:
