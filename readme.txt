@@ -30,6 +30,10 @@ Using this plugin is very simple. All you have to do is:
 
 == Changelog ==
 
+= 0.3.2 =
+
+* Fixed bug preventing setting from saving
+
 = 0.3.1 =
 
 * Output admin notice if `client-dash` is not active

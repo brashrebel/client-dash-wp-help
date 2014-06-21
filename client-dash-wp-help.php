@@ -2,7 +2,7 @@
 /*
 Plugin Name: Client Dash WP Help Add-on
 Description: Integrates content from WP Help with Client Dash by displaying it on the FAQ tab under the Help page.
-Version: 0.3.1
+Version: 0.3.2
 Author: Kyle Maurer
 Author URI: http://realbigmarketing.com/staff/kyle
 */
@@ -17,7 +17,7 @@ add_action('admin_notices', 'cdwph_notices');
 
 // Register settings
 function cdwph_register_settings() {
-	register_setting('cd_options', 'cdwph_url', 'esc_url_raw');
+	register_setting('cd_options_general', 'cdwph_url', 'esc_url_raw');
 }
 add_action('admin_init', 'cdwph_register_settings');
 
