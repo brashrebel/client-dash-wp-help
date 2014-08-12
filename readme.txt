@@ -30,6 +30,9 @@ Using this plugin is very simple. All you have to do is:
 
 == Changelog ==
 
+= 0.3.4 =
+* Made compatible with Client Dash version 1.5
+
 = 0.3.3 =
 
 * Compatible with Client Dash version 1.4
